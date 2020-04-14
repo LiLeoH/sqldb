@@ -6,7 +6,6 @@ import (
 	"fmt"
 	"net"
 	"reflect"
-	"revenuemesh/pkg/yylog"
 	"strings"
 	"sync"
 	"time"
@@ -173,7 +172,7 @@ func (s *mgr) Init(cfgs []DbConfig, dailer func(addr string) (net.Conn, error)) 
 		if err != nil {
 			return err
 		}
-		yylog.LogF("info", "sqldb.Init tag:%s dsn: %s", cfg.Tag, dsn)
+		//yylog.LogF("info", "sqldb.Init tag:%s dsn: %s", cfg.Tag, dsn)
 
 		if dailer != nil {
 			err = RegistDialer(dailer)
